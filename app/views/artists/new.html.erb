@@ -1,6 +1,5 @@
 <!-- app/views/artists/new.html.erb -->
-<%= turbo_frame_tag 'new_artist_modal' do %>
-	<div class="modal">
-		<%= render 'form', artist: @artist %>
-	</div>
-<% end %>
+<div class="container mx-auto mt-56">
+  <h2 class="text-2xl font-bold mb-4">Añadir Nuevo Artista</h2>
+  <%= render 'form', artist: @artist %>
+</div>

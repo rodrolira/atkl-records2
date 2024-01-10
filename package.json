@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@storybook/addon-controls": "^7.6.7",
-    "@storybook/server": "^7.6.7"
+    "@storybook/server": "^7.6.7",
+    "flowbite": "^2.2.1"
   },
   "devDependencies": {
     "node": "^21.2.0"

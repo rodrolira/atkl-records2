@@ -1,10 +1,40 @@
 <!-- app/views/shared/_artist_card.html.erb -->
-<%= turbo_frame_tag dom_id(artist) do %>
-  <div class="card" data-controller="artist-card" data-artist-id="<%= artist.id %>">
-    <%= link_to artist_path(artist), remote: true, data: { turbo_frame: dom_id(artist) } do %>
-      <%= image_tag rails_blob_url(artist.profile_picture), class: "rounded-full max-w-xs" %>
-      <h3 class="text-lg font-bold mt-2"><%= artist.name %></h3>
-      <p><strong>Profession:</strong> <%= artist.profession %></p>
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <%= link_to artist_path(artist) do %>
+    <% if artist.profile_picture.attached? %>
+      <%= image_tag rails_blob_url(artist.profile_picture), class: "rounded-t-lg" %>
+    <% else %>
+      <!-- Agrega una imagen de respaldo o estilo alternativo si no hay imagen adjunta -->
+      <%= image_tag "placeholder.jpg", class: "rounded-t-lg" %>
     <% end %>
+  <% end %>
+  <div class="p-5">
+    <%= link_to artist_path(artist) do %>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <%= artist.name %>
+      </h5>
+    <% end %>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <%= artist.profession %>
+    </p>
+    <!-- Agrega enlaces a las redes sociales del artista aquí -->
+    <!-- Por ejemplo: Twitter, Instagram, Facebook -->
+    <!-- Puedes personalizar esto según las redes sociales que desees mostrar -->
+    <div class="flex space-x-2">
+      <!-- Agrega los iconos de las redes sociales aquí -->
+      <!-- Por ejemplo, usa font-awesome o cualquier conjunto de iconos que prefieras -->
+      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-300">
+        <!-- Icono de Twitter -->
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-300">
+        <!-- Icono de Instagram -->
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-600">
+        <!-- Icono de Facebook -->
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
   </div>
-<% end %>
+</div>
