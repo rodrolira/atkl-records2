@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@storybook/addon-controls": "^7.6.7",
+    "@storybook/server": "^7.6.7"
+  },
+  "devDependencies": {
+    "node": "^21.2.0"
+  }
+}
