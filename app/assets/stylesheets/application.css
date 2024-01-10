@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Set a box-sizing model that will work across all browsers */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* Remove default list style and margin */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default margin and padding */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove outline from links */
+a:hover,
+a:active {
+    outline: none;
+}
+
+body {
+    line-height: 1;
+}
+
+
+/* NAVBAR */
+
+/* Add this CSS to your stylesheet or in a style tag in your HTML */
+.navbar-wrapper {
+    background-color: rgba(255,
+            255,
+            255,
+            0.9);
+    /* Adjust the alpha value for transparency */
+    backdrop-filter: blur(10px);
+    /* Adjust the blur value for the reflection effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adjust the shadow values for a subtle shadow */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Optional: Add this to remove the default border and padding on the body */
+q body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    /* Puedes cambiar la fuente según tus preferencias */
+}
+
+.parallax-container {
+    height: 100vh;
+    background-image: url('header.jpg');
+    /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+/* Otros estilos para el contenido del encabezado si es necesario */
+style>.parallax-container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-content {
+    background-image: url('header.jpg');
+    /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

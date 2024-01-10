@@ -1,0 +1,6 @@
+<!-- app/views/artists/new.html.erb -->
+<%= turbo_frame_tag 'new_artist_modal' do %>
+	<div class="modal">
+		<%= render 'form', artist: @artist %>
+	</div>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="parallax-container flex">
+	<div class="parallax-content flex w-full">
+		<!--Contenido del encabezado aquí-->
+		<div class="container mx-auto my-24">
+			<section id="main" class="main h-full flex flex-col">
+				<div class="logo-main flex items-center h-full w-full">
+					<%= image_tag "main.png", alt: "main", class: "h-56 mx-auto" %>
+				</div>
+				<div class="text-center text-white flex flex-col py-8">
+					<h1 class="title-main font-extrabold text-5xl"> HARD TECHNO IS LIFE</h1>
+					<h2 class="text-3xl"> LABEL </h2>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<div class="text-center mt-8">
+		<%= link_to artists_path, class: "btn-primary", remote: true, data: { turbo_frame: "new_record_component" } do %>
+			Explore Artists
+		<% end %>
+</div>
+

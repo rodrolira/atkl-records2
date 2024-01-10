@@ -1,0 +1,8 @@
+<!-- app/views/artists/_artist.html.erb -->
+<div class="artist-details">
+	<% if @artist.present? %>
+		<%= render ArtistCardComponent.new(artist: @artist) %>
+	<% else %>
+		<p>No se ha proporcionado información del artista.</p>
+	<% end %>
+</div>
