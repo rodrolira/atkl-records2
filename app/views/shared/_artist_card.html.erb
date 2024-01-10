@@ -1,0 +1,10 @@
+<!-- app/views/shared/_artist_card.html.erb -->
+<%= turbo_frame_tag dom_id(artist) do %>
+  <div class="card" data-controller="artist-card" data-artist-id="<%= artist.id %>">
+    <%= link_to artist_path(artist), remote: true, data: { turbo_frame: dom_id(artist) } do %>
+      <%= image_tag rails_blob_url(artist.profile_picture), class: "rounded-full max-w-xs" %>
+      <h3 class="text-lg font-bold mt-2"><%= artist.name %></h3>
+      <p><strong>Profession:</strong> <%= artist.profession %></p>
+    <% end %>
+  </div>
+<% end %>

@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   resources :singles
   resources :tracks
   resources :events
-
+  resources :discography
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "home/index"
-
+  resources :artists, only: [:index, :show, :new, :create] # Puedes ajustar las acciones según tus necesidades
+  resources :releases, only: [:index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
