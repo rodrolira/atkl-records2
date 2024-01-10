@@ -5,6 +5,7 @@ class Release < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :artist
+  has_many :tracks
 
   has_one_attached :cover_image
 
