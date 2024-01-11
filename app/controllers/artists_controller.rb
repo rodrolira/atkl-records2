@@ -28,6 +28,8 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
+    @artist.biography = params[:artist][:biography] # Asegúrate de que esto esté presente
+
     if @artist.save
       respond_to do |format|
         format.html { redirect_to @artist, notice: 'Artista creado exitosamente.' }
@@ -44,19 +46,17 @@ class ArtistsController < ApplicationController
   def edit
   end
 
-  def update
-    if @artist.update(artist_params)
-      respond_to do |format|
-        format.html { redirect_to @artist, notice: 'Artista actualizado exitosamente.' }
-        format.json { head :no_content }
-      end
-    else
-      respond_to do |format|
-        format.html { render 'edit' }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
-      end
-    end
+def update
+  @artist = Artist.find(params[:id])
+  @artist.biography = params[:artist][:biography] # Asegúrate de que esto esté presente
+
+  if @artist.update(artist_params)
+    redirect_to @artist, notice: 'Artista actualizado exitosamente.'
+  else
+    render :edit
   end
+end
+
 
   def destroy
     @artist.destroy
@@ -73,6 +73,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :profession, :profile_picture)
+    params.require(:artist).permit(:name, :profession, :profile_picture, :biography)
   end
 end
