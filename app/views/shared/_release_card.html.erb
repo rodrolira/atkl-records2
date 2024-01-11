@@ -1,0 +1,23 @@
+<!-- app/views/shared/_release_card.html.erb -->
+<div class="max-w-sm text-white text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-black dark:border-gray-700">
+  <% if release.cover_art.attached? %>
+    <%= image_tag rails_blob_url(release.cover_art), class: "rounded-lg max-w-full" %>
+  <% end %>
+  <h3 class="text-lg font-bold mt-2"><%= release.title %></h3>
+  <h3 class="text-lg font-bold mt-2"><%= release.artist.name %></h3>
+  <p class="text-sm text-gray-500"><%= release.catalogue %></p>
+  <% if release.bandcamp_embed_code.present? %>
+    <div class="mt-4">
+      <div class="p-4">
+      <%= raw release.bandcamp_embed_code %>
+    </div>
+    </div>
+  <% end %>
+  <!-- Enlace de Edición -->
+  <% if current_admin_user %>
+  <%= link_to 'Editar', edit_release_path(release), class: 'edit-release-link', remote: true %>
+  <%= link_to "Eliminar", release_path(release), method: :delete, data: { confirm: "¿Estás seguro de que quieres eliminar este release?" }, class: "text-red-500 hover:text-red-700 ml-2" %>
+  <% end %>
+</div>
+
+
