@@ -1,5 +1,5 @@
 <!-- app/views/shared/_artist_card.html.erb -->
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-black dark:border-gray-700">
   <%= link_to artist_path(artist) do %>
     <% if artist.profile_picture.attached? %>
       <%= image_tag rails_blob_url(artist.profile_picture), class: "rounded-t-lg" %>
@@ -10,17 +10,17 @@
   <% end %>
   <div class="p-5">
     <%= link_to artist_path(artist) do %>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white">
         <%= artist.name %>
       </h5>
     <% end %>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+    <p class="mb-3 font-normal uppercase text-center text-gray-700 dark:text-gray-400">
       <%= artist.profession %>
     </p>
     <!-- Agrega enlaces a las redes sociales del artista aquí -->
     <!-- Por ejemplo: Twitter, Instagram, Facebook -->
     <!-- Puedes personalizar esto según las redes sociales que desees mostrar -->
-    <div class="flex space-x-2">
+    <div class="flex space-x-4 text-2xl justify-center">
       <!-- Agrega los iconos de las redes sociales aquí -->
       <!-- Por ejemplo, usa font-awesome o cualquier conjunto de iconos que prefieras -->
       <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-300">
