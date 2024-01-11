@@ -12,7 +12,12 @@
 <div class="flex">
   <!-- Sección de información básica del artista -->
   <div class="w-1/3 p-4 border-r text-center text-white">
+    <% if @artist.profile_picture.attached? %>
       <%= image_tag rails_blob_url(@artist.profile_picture), class: "rounded-t-lg" %>
+    <% else %>
+      <!-- Agrega una imagen de respaldo o estilo alternativo si no hay imagen adjunta -->
+      <%= image_tag "avatar.jpg", class: "rounded-t-lg" %>
+    <% end %>
     <h1 class="text-2xl font-bold mb-2"><%= @artist.name %></h1>
     <p class=" mb-2 uppercase"><%= @artist.profession %></p>
     <!-- Iconos de redes sociales aquí -->

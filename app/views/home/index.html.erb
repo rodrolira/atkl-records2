@@ -15,16 +15,22 @@
 	</div>
 </div>
 
-<section id="artists">
-  <h2>Artistas Destacados</h2>
-  <% @artists.each do |artist| %>
-    <%= render partial: 'artists/artist', locals: { artist: artist } %>
-  <% end %>
+<section id="artists" class="p-5">
+<div class="container mx-auto mt-8">
+  <h2 class="text-4xl text-white text-center font-bold mb-4">Nuestros Talentosos Artistas</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <% @artists.each do |artist| %>
+      <%= render 'shared/artist_card', artist: artist %>
+    <% end %>
+  </div>
+</div>
 </section>
 
-<section id="releases">
-  <h2>Últimos Lanzamientos</h2>
-  <% @releases.each do |release| %>
-    <%= render partial: 'shared/release_card', locals: { release: release } %>
-  <% end %>
+<section id="releases" class="p-5">
+  <h2 class="text-4xl text-white text-center font-bold mb-4">Últimos Lanzamientos</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <% @releases.each do |release| %>
+      <%= render 'shared/release_card', release: release %>
+    <% end %>
+  </div>
 </section>

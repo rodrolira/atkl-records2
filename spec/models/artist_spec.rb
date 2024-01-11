@@ -1,24 +1,24 @@
-# spec/models/artist_spec.rb
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe Artist, type: :model do
-  it "is valid with valid attributes" do
-    artist = Artist.new(name: "Example Artist", profession: "Musician")
-    expect(artist).to be_valid
-  end
+  describe 'validations' do
+    it 'is valid with valid attributes' do
+      artist = FactoryBot.build(:artist)
+      expect(artist).to be_valid
+    end
 
-  it "is not valid without a name" do
-    artist = Artist.new(name: nil, profession: "Musician")
-    expect(artist).not_to be_valid
-  end
+    it 'is not valid without a name' do
+      artist = build(:artist, name: nil)
 
-  it "is not valid without a profession" do
-    artist = Artist.new(name: "Example Artist", profession: nil)
-    expect(artist).not_to be_valid
-  end
+      expect(artist).to_not be_valid
+    end
 
-  it "is valid with both name and profession" do
-    artist = Artist.new(name: "Example Artist", profession: "Musician")
-    expect(artist).to be_valid
+    it 'is not valid without a profession' do
+      artist = build(:artist, profession: nil)
+
+      expect(artist).to_not be_valid
+    end
   end
 end

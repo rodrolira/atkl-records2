@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/models/artist.rb
 class Artist < ApplicationRecord
   validates :name, presence: true
@@ -6,6 +8,4 @@ class Artist < ApplicationRecord
   has_many :multimedia_items
   has_one_attached :profile_picture
   attr_accessor :biography
-
-
 end

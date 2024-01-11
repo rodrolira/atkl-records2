@@ -74,3 +74,9 @@ gem "sassc-rails"
 gem 'sassc'
 gem 'image_processing', '~> 1.2'
 gem "font-awesome-sass", "~> 6.5.1"
+gem "htmlbeautifier"
+gem "rufo"
+gem "ruby-lsp"
+gem "rubocop"
+gem 'factory_bot_rails'
+gem "faker"
