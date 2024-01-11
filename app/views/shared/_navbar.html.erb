@@ -16,8 +16,13 @@
 				<div id="dropdownHover" class="z-10 hidden bg-white divide-y  rounded-lg shadow w-44 text-center dark:bg-red-900">
 					<ul class="py-2 text-sm text-white dark:text-white" aria-labelledby! = "dropdownHoverButton">
 						<li>
-							<%= link_to new_artist_path, class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white divide-gray-900", remote: true, data: { turbo_frame: "new_artist_modal" } do %>
+							<%= link_to new_artist_path, class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white divide-gray-900", remote: true do %>
 								Add Artist
+							<% end %>
+						</li>
+						<li>
+							<%= link_to new_release_path, class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white divide-gray-900", remote: true do %>
+								Add Release
 							<% end %>
 						</li>
 					</ul>

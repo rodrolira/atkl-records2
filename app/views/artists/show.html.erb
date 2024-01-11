@@ -1,11 +1,13 @@
 <!-- app/views/artists/show.html.erb -->
 
-<div class="mt-24">
+<div class="mt-32">
         <h1 class="text-4xl text-white text-center font-bold mb-2"><%= @artist.name %></h1>
 
       <!-- Botón de edición -->
+      <% if current_admin_user %>
   <%= link_to edit_artist_path(@artist), class: "mx-auto text-white bg-blue-600 rounded-full py-2 px-4 mt-4 inline-block font-medium cursor-pointer" do %>
     Editar Artista
+  <% end %>
   <% end %>
 <div class="flex">
   <!-- Sección de información básica del artista -->
@@ -19,12 +21,12 @@
   <!-- Sección de biografía y releases del artista -->
   <div class="w-2/3 p-4 text-white text-center">
     <h2 class="text-2xl font-bold mb-4">Biografía</h2>
-    <p><%= @artist.biography %></p>
+    <p class="text-white"><%= @artist.biography %></p>
 
     <h2 class="text-2xl font-bold mt-8 mb-4">Releases</h2>
     <% @artist.releases.each do |release| %>
       <div class="mb-4">
-        <%= link_to release.title, release_path(release) %>
+      <%= render 'shared/release_card', release: release %>
         <!-- Otros detalles del release según tus necesidades -->
       </div>
     <% end %>

@@ -2,6 +2,8 @@
 
 class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+
 
   def index
     @releases = Release.all
@@ -20,6 +22,7 @@ class ReleasesController < ApplicationController
 
   def new
     @release = Release.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @release }
@@ -28,9 +31,10 @@ class ReleasesController < ApplicationController
 
   def create
     @release = Release.new(release_params)
+
     if @release.save
       respond_to do |format|
-        format.html { redirect_to @release, notice: 'Lanzamiento creado exitosamente.' }
+        format.html { redirect_to @release, notice: 'Release creado exitosamente.' }
         format.json { render json: @release, status: :created, location: @release }
       end
     else
@@ -59,11 +63,11 @@ class ReleasesController < ApplicationController
   end
 
   def destroy
+    @release = Release.find(params[:id])
     @release.destroy
-    respond_to do |format|
-      format.html { redirect_to releases_url, notice: 'Lanzamiento eliminado exitosamente.' }
-      format.json { head :no_content }
-    end
+    redirect_to releases_path, notice: 'Release eliminado exitosamente.'
+
+
   end
 
   private
@@ -73,6 +77,10 @@ class ReleasesController < ApplicationController
   end
 
   def release_params
-    params.require(:release).permit(:title, :catalogue, :artist_id, :other_attributes)
+    params.require(:release).permit(:title, :catalogue, :artist_id, :bandcamp_embed_code)
+  end
+  
+  def require_admin
+    redirect_to root_path, alert: 'Solo los administradores pueden realizar esta acción.' unless current_admin_user
   end
 end

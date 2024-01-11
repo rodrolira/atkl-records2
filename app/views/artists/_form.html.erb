@@ -7,8 +7,13 @@
 
   <div class="my-5">
     <%= form.label :profession %>
-    <%= form.select :profession, ['Dj', 'Producer'], {}, { class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full text-black' } %>
+    <%= form.select :profession, ['DJ', 'Producer'], {}, { class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full text-black' } %>
   </div>
+
+<div class="my-5">
+  <%= form.label :biography %>
+  <%= form.text_area :biography, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
   <div class="my-5">
     <%= form.label :profile_picture %>

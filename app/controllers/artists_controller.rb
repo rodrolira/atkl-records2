@@ -48,7 +48,6 @@ class ArtistsController < ApplicationController
 
 def update
   @artist = Artist.find(params[:id])
-  @artist.biography = params[:artist][:biography] # Asegúrate de que esto esté presente
 
   if @artist.update(artist_params)
     redirect_to @artist, notice: 'Artista actualizado exitosamente.'

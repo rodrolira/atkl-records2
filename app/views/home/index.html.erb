@@ -14,9 +14,17 @@
 		</div>
 	</div>
 </div>
-<div class="text-center mt-8">
-		<%= link_to artists_path, class: "btn-primary", remote: true, data: { turbo_frame: "new_record_component" } do %>
-			Explore Artists
-		<% end %>
-</div>
 
+<section id="artists">
+  <h2>Artistas Destacados</h2>
+  <% @artists.each do |artist| %>
+    <%= render partial: 'artists/artist', locals: { artist: artist } %>
+  <% end %>
+</section>
+
+<section id="releases">
+  <h2>Últimos Lanzamientos</h2>
+  <% @releases.each do |release| %>
+    <%= render partial: 'shared/release_card', locals: { release: release } %>
+  <% end %>
+</section>

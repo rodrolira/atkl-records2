@@ -1,8 +1,3 @@
-<!-- app/views/artists/_artist.html.erb -->
-<div class="artist-details">
-	<% if @artist.present? %>
-		<%= render ArtistCardComponent.new(artist: @artist) %>
-	<% else %>
-		<p>No se ha proporcionado información del artista.</p>
-	<% end %>
-</div>
+  <h2 class="text-4xl font-bold mb-4 text-white text-center">Artists</h2>
+
+    <%= render partial: 'shared/artist_card', locals: { artist: artist } %>
