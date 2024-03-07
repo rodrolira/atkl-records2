@@ -1,0 +1,20 @@
+# shakaspacker.yml
+
+# Directorio de origen de assets
+source_path: app/assets
+
+# Directorio de salida de assets compilados
+output_path: public/assets
+
+# Lista de archivos CSS que deben ser empaquetados
+stylesheets:
+  - application.css
+  - application.tailwind.css
+  - active_admin.scss
+# Lista de archivos JavaScript que deben ser empaquetados
+javascripts:
+  - application.js
+
+# Configuración adicional, como minificación, compresión, etc.
+minify: true
+gzip: true

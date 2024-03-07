@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 # app/controllers/artists_controller.rb
 
-class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+class ArtistsController < ApplicationController # rubocop:disable Style/Documentation
+  before_action :set_artist, only: %i[show edit update destroy]
 
   def index
     @artists = Artist.all
@@ -27,40 +29,30 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(artist_params)
-    @artist.biography = params[:artist][:biography] # Asegúrate de que esto esté presente
+    artist = Artist.new(artist_params)
+    artist.biography = params[:artist][:biography]
 
-    if @artist.save
-      respond_to do |format|
-        format.html { redirect_to @artist, notice: 'Artista creado exitosamente.' }
-        format.json { render json: @artist, status: :created, location: @artist }
-      end
+    if artist.save
+      render_success(artist)
     else
-      respond_to do |format|
-        format.html { render 'new' }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
-      end
+      render_failure(artist)
     end
   end
 
-  def edit
+  def update
+    @artist = Artist.find(params[:id])
+
+    if @artist.update(artist_params)
+      redirect_to @artist, notice: "Artista actualizado exitosamente."
+    else
+      render :edit
+    end
   end
-
-def update
-  @artist = Artist.find(params[:id])
-
-  if @artist.update(artist_params)
-    redirect_to @artist, notice: 'Artista actualizado exitosamente.'
-  else
-    render :edit
-  end
-end
-
 
   def destroy
     @artist.destroy
     respond_to do |format|
-      format.html { redirect_to artists_url, notice: 'Artista eliminado exitosamente.' }
+      format.html { redirect_to artists_url, notice: "Artista eliminado exitosamente." }
       format.json { head :no_content }
     end
   end

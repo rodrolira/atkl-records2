@@ -36,7 +36,7 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -46,7 +46,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[mri windows]
 end
 
 group :development do
@@ -61,22 +61,20 @@ group :development do
 end
 
 gem "rspec-rails", "~> 6.1"
-# Para ViewComponent
-gem "view_component", require: "view_component/engine"
-
-# Para Storybook
-gem "storybook_rails"
 
 gem "tailwindcss-rails", "~> 2.2"
 gem "activeadmin"
 gem "devise"
 gem "sassc-rails"
-gem 'sassc'
-gem 'image_processing', '~> 1.2'
+gem "sassc"
+gem "image_processing", "~> 1.2"
 gem "font-awesome-sass", "~> 6.5.1"
 gem "htmlbeautifier"
 gem "rufo"
 gem "ruby-lsp"
-gem "rubocop"
-gem 'factory_bot_rails'
+gem "rubocop", ">= 1.16.0", "< 2.0.0"
+gem "factory_bot_rails"
 gem "faker"
+gem "view_component"
+
+# gem "shakapacker", "7.2.2"

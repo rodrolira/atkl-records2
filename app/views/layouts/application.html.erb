@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>AtklRecords2</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<%= csrf_meta_tags %>
-		<%= csp_meta_tag %>
-		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-		<%= javascript_importmap_tags %>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://kit.fontawesome.com/4fd0c3dd1a.js" crossorigin="anonymous"></script>
-		<!-- En el head de tu layout o página -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <head>
+    <title>AtklRecords2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "buttons", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4fd0c3dd1a.js" crossorigin="anonymous"></script>
+    <!-- En el head de tu layout o página -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 
+  </head>
+  <body class="bg-slate-950">
+    <%= render 'shared/navbar' %>
+    <%= yield %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.turbo.min.js"></script>
 
-	</head>
-	<body class="bg-slate-950">
-		<%= render 'shared/navbar' %>
-		<%= yield %>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.turbo.min.js"></script>
-
-	</body>
+  </body>
 </html>

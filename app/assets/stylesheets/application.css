@@ -12,9 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require buttons
  */
- @import "font-awesome";
-
+@import "font-awesome.css";
+@import "buttons.css";
 
 /* Set a box-sizing model that will work across all browsers */
 html {
@@ -164,14 +165,18 @@ style>.parallax-container {
 
 #artists,
 #releases {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Otra opción: justify-content: space-between; */
-  margin: 20px 0; /* Espaciado entre las secciones */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Otra opción: justify-content: space-between; */
+    margin: 20px 0;
+    /* Espaciado entre las secciones */
 }
 
 .artist-card,
 .release-card {
-  width: 30%; /* Ajusta según tus preferencias para el ancho de cada tarjeta */
-  margin-bottom: 20px; /* Espaciado entre las tarjetas */
+    width: 30%;
+    /* Ajusta según tus preferencias para el ancho de cada tarjeta */
+    margin-bottom: 20px;
+    /* Espaciado entre las tarjetas */
 }
